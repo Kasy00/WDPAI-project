@@ -41,7 +41,8 @@ body{
     justify-content: flex-start;
     align-items: center;
     background-color: var(--primary);
-    width: 30vw;
+    width: clamp(30vw, 30vw+2rem, 45vw);
+    gap: 1.5rem;
 }
 
 .logo{
