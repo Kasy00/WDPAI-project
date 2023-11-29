@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+
+:root{
+    --primary: rgba(255, 133, 46, 0.644);
+    --secondary: #01605A;
+    --accents: #FFD0A8;
+    --input-red: #E21A4B;
+    --input-green: #46d110;
+    --font-primary: #003734;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    background: url(../img/background.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: "Coiny", sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-primary);
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--primary);
+    width: 30vw;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo > img{
+    width: 70%;
+    height: auto;
+    
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+.check{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.check > label{
+    margin-right: 1rem;
+}
+
+#email, #password, #submit{
+    padding: 1rem;
+}
+
+form > input{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid var(--secondary);
+}
+
+form > input:focus{
+    outline: none;
+    border-bottom: 3px solid var(--accents);
+}
+
+form > input:not(:focus):not(:placeholder-shown):invalid{
+    outline:none;
+    border-bottom: 3px solid var(--input-red);
+}
+
+form > input:not(:focus):not(:placeholder-shown):invalid ~ error-message{
+    display: block;
+}
+
+form > input:not(:focus):not(:placeholder-shown):valid{
+    outline:none;
+    border-bottom: 3px solid var(--input-green);
+}
+
+form > div > a{
+    text-decoration: underline;
+}
+
+.bottom > a{
+    text-decoration: underline;
+}
+
+span{
+    font-size: 1.5rem;
+}
+
+#submit{
+    width: 100%;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#submit:hover{
+    background-color: var(--font-primary);
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: var(--font-primary);
+}
+
+a:hover{
+    color: #fff;
+}
+
+.bottom{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
