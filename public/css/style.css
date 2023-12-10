@@ -196,3 +196,19 @@ a:hover{
     font-weight: bold;
     transition: all 0.7s ease;
 }
+
+@media only screen and (max-width: 768px) {
+    .card {
+      width: 80%;
+    }
+  
+    .front,
+    .back {
+      gap: 1rem;
+    }
+  
+    #login-btn,
+    #signup-btn {
+      width: 100%;
+    }
+  }
