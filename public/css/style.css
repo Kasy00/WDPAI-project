@@ -97,10 +97,6 @@ form{
     padding: 1rem;
 }
 
-.front form .messages{
-    color: var(--input-red);
-}
-
 .check{
     display: flex;
     justify-content: space-between;
