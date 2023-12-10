@@ -14,7 +14,16 @@
                 <div class="logo">
                     <img src="public/img/logo.png" alt="Logo">
                 </div>
-                <form action="" method="">
+                <form action="login" method="POST">
+                    <div class="messages">
+                        <?php 
+                            if(isset($messages)){
+                                foreach ($messages as $message) {
+                                    echo $message;
+                                }
+                            }
+                        ?>
+                    </div>
                     <input type="email" name="email" id="email" placeholder="EMAIL" required>
                     <input type="password" name="password" id="password" placeholder="PASSWORD" required>
                     <div class="check">
