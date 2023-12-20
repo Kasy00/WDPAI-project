@@ -124,4 +124,5 @@ a{
     gap: 1rem;
     padding: 1rem 2rem;
     justify-self: center;
+    background-color: var(--primary);
 }
