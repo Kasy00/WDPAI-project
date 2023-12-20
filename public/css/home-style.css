@@ -66,6 +66,10 @@ a{
     font-size: clamp(1.5rem, 1vw, 2.5rem);
 }
 
+.sidebar ul li:hover{
+    transform: scale(1.1);
+}
+
 .sidebar-btn{
     max-width: clamp(1.5rem, 2.5vw, 5.5rem);
     height: auto;
