@@ -24,10 +24,10 @@
             </div>
             <div class="section">
                 <div class="recipes">
-
+                    <h3>Recipes suggested for you</h3>
                 </div>
                 <div class="trending">
-
+                    <h3>Trending</h3>
                 </div>
             </div>
         </div>
