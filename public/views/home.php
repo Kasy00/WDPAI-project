@@ -18,7 +18,9 @@
         </div>
         <div class="main-content">
             <div class="header">
-
+                <input type="text" id="search-bar" name="search" placeholder="Enter ingredients here">
+                <div class="avatar"></div>
+                <span id="user-name">Kamil</span>
             </div>
             <div class="section">
                 <div class="recipes">
