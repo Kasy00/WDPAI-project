@@ -8,7 +8,7 @@ class DefaultController extends AppController{
         $this->render('login');
     }
 
-    public function project(){
-         //TODO
+    public function home(){
+         $this->render('home');
     }
 }
