@@ -16,6 +16,19 @@
                 <li><img class="sidebar-btn" src="public/img/about.svg" alt="about button">About</li>
             </ul>
         </div>
+        <div class="main-content">
+            <div class="header">
+
+            </div>
+            <div class="section">
+                <div class="recipes">
+
+                </div>
+                <div class="trending">
+
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
