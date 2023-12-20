@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&display=swap');
 
+:root{
+    --primary: rgba(255, 133, 46, 0.644);
+    --secondary: #01605A;
+    --accents: #FFD0A8;
+    --input-red: #E21A4B;
+    --input-green: #46d110;
+    --font-primary: #003734;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -15,7 +24,33 @@ body{
     font-size: 1.6rem;
 }
 
+.container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    min-height: 100%;
+}
+
 a{
     text-decoration: none;
     color: black;
+}
+
+.sidebar{
+    background-color: var(--accents);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.sidebar-btn{
+    max-width: clamp(1rem, 2.5vw, 4.5rem);
+    height: auto;
+    transition: 0.2s ease-in-out;
+}
+
+.logo{
+    max-width: 8rem;
+    height: auto;
 }
