@@ -148,3 +148,21 @@ a{
     border-radius: 1rem;
 }
 
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accents);
+    border-radius: 1rem;
+    padding: 1rem;
+    transition: 0.2s ease-in-out;
+}
+

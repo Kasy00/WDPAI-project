@@ -25,6 +25,71 @@
             <div class="section">
                 <div class="recipes">
                     <h3>Recipes suggested for you</h3>
+                    <div class="cards">
+                        <div class="card">
+                            <img src="/public/img/recipe1.png" alt="recipe1">
+                            <div class="card-info">
+                                <h4>Recipe 1</h4>
+                                <p>Time: 30 min</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/public/img/recipe1.png" alt="recipe1">
+                            <div class="card-info">
+                                <h4>Recipe 1</h4>
+                                <p>Time: 30 min</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/public/img/recipe1.png" alt="recipe1">
+                            <div class="card-info">
+                                <h4>Recipe 1</h4>
+                                <p>Time: 30 min</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/public/img/recipe1.png" alt="recipe1">
+                            <div class="card-info">
+                                <h4>Recipe 1</h4>
+                                <p>Time: 30 min</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/public/img/recipe1.png" alt="recipe1">
+                            <div class="card-info">
+                                <h4>Recipe 1</h4>
+                                <p>Time: 30 min</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/public/img/recipe1.png" alt="recipe1">
+                            <div class="card-info">
+                                <h4>Recipe 1</h4>
+                                <p>Time: 30 min</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/public/img/recipe1.png" alt="recipe1">
+                            <div class="card-info">
+                                <h4>Recipe 1</h4>
+                                <p>Time: 30 min</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/public/img/recipe1.png" alt="recipe1">
+                            <div class="card-info">
+                                <h4>Recipe 1</h4>
+                                <p>Time: 30 min</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/public/img/recipe1.png" alt="recipe1">
+                            <div class="card-info">
+                                <h4>Recipe 1</h4>
+                                <p>Time: 30 min</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="trending">
                     <h3>Trending</h3>
