@@ -47,6 +47,8 @@ a{
 
 .logo{
     align-self: center;
+    max-width: clamp(2.5rem, 3.5vw, 7.5rem);
+    height: auto;
 }
 
 .sidebar ul{
@@ -111,11 +113,6 @@ a{
     margin-left: 1.5rem;
     font-size: 2rem;
     color: #fff;
-}
-
-.logo{
-    max-width: 8em;
-    height: auto;
 }
 
 .section{
