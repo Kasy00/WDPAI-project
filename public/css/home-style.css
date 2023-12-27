@@ -80,7 +80,6 @@ a{
 
 .header{
     padding: 1.5rem;
-    /* min-height: 30%; */
     border-bottom: 2px solid var(--font-primary);
     display: flex;
     align-items: center;
@@ -123,11 +122,20 @@ a{
     outline: none;
 }
 
+#search-bar:hover{
+    border: 1px solid var(--primary);
+}
+
+#search-bar:focus{
+    border: 2px solid var(--primary);
+}
+
 .avatar{
     border: 1px solid #fff;
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
+    margin-left: 1.5rem;
 }
 
 #user-name{
