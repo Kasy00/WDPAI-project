@@ -47,7 +47,7 @@ a{
 
 .logo{
     align-self: center;
-    max-width: clamp(2.5rem, 3.5vw, 7.5rem);
+    max-width: clamp(5em, 10.5vw, 13em);
     height: auto;
 }
 
