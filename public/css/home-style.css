@@ -117,11 +117,19 @@ a{
 
 .section{
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 3fr 1fr;
     gap: 1rem;
     justify-self: center;
     background-color: var(--primary);
     min-height: 100vh;
+    padding: 1rem
+}
+
+.section h3{
+    font-size: clamp(2rem, 2vw, 3rem);
+    color: var(--font-primary);
+    text-align: center;
+    padding: 1rem;
 }
 
 .recipes{
@@ -134,6 +142,9 @@ a{
     text-align: center;
     color: var(--font-primary);
     padding: 1rem;
-    border-left: 2px solid var(--font-primary);
+    -webkit-box-shadow: 0px 0px 100px 9px rgba(165, 33, 33, 0.28);
+    -moz-box-shadow: 0px 0px 100px 9px rgba(165, 33, 33, 0.28);
+    box-shadow: 0px 0px 100px 9px rgba(165, 33, 33, 0.28);
+    border-radius: 1rem;
 }
 

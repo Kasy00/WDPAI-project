@@ -18,7 +18,7 @@
         </div>
         <div class="main-content">
             <div class="header">
-                <input type="text" id="search-bar" name="search" placeholder="Enter ingredients here">
+                <input type="text" id="search-bar" name="search" placeholder="Enter ingredients here" autocomplete="off">
                 <div class="avatar"></div>
                 <span id="user-name">Kamil</span>
             </div>
