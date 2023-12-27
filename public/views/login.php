@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/style.css">
-    <script src="public/scripts/script.js" defer></script>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <script src="/public/scripts/script.js" defer></script>
     <title>MealMagic</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="card">
             <div class="front">
                 <div class="logo">
-                    <img src="public/img/logo.png" alt="Logo">
+                    <img src="/public/img/logo.png" alt="Logo">
                 </div>
                 <form action="login" method="POST">
                     <div class="messages">
@@ -37,8 +37,8 @@
                 </form>
                 <p>or sign up using</p>
                 <div class="icons">
-                    <a href=""><img src="public/img/facebook-icon.svg" alt="Facebook icon to login"></a>
-                    <a href=""><img src="public/img/gmail-icon.svg" alt="Gmail icon to login"></a>
+                    <a href=""><img src="/public/img/facebook-icon.svg" alt="Facebook icon to login"></a>
+                    <a href=""><img src="/public/img/gmail-icon.svg" alt="Gmail icon to login"></a>
                 </div>
                 <div class="bottom">
                     <p>Don't have an account?</p>
@@ -47,7 +47,7 @@
             </div>
             <div class="back">
                 <div class="logo">
-                    <img src="public/img/logo.png" alt="Logo">
+                    <img src="/public/img/logo.png" alt="Logo">
                 </div>
                 <form action="" method="">
                     <input type="text" name="first-name" id="first-name" placeholder="FIRST NAME" required>
