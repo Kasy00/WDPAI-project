@@ -119,7 +119,21 @@ a{
     display: grid;
     grid-template-columns: 4fr 1fr;
     gap: 1rem;
-    padding: 1rem 2rem;
     justify-self: center;
-    background-color: var(--accents);
+    background-color: var(--primary);
+    min-height: 100vh;
 }
+
+.recipes{
+}
+
+.trending{
+}
+
+.recipes, .trending{
+    text-align: center;
+    color: var(--font-primary);
+    padding: 1rem;
+    border-left: 2px solid var(--font-primary);
+}
+
