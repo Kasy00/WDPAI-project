@@ -87,18 +87,39 @@ a{
     background-color: var(--secondary);
 }
 
+.header form{
+    margin-right: auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.header button{
+    background-color: var(--accents);
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    color: var(--font-primary);
+    font-weight: bold;
+    width: clamp(7.5rem, 8.5vw, 10.5rem);
+}
+
+.header button:hover{
+    transform: scale(1.1);
+}
+
 #search-bar{
     background-image: url(/public/img/search.svg);
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 3rem;
-    width: clamp(150px, 70% + 1rem, 1000px);
-    padding: 1rem;
+    width: clamp(170px, 70% + 1rem, 1000px);
     border-radius: 3rem;
     font-size: 1.6rem;
     padding: 12px 20px 12px 40px;
     border: 1px solid #ddd;
-    margin-right: auto;
     outline: none;
 }
 
@@ -162,11 +183,11 @@ a{
 }
 
 .card:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .card:active{
-    transform: scale(0.9);
+    transform: scale(0.95);
 }
 
 .recipes h4, .trending h4{

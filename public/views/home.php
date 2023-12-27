@@ -18,7 +18,11 @@
         </div>
         <div class="main-content">
             <div class="header">
-                <input type="text" id="search-bar" name="search" placeholder="Enter ingredients here" autocomplete="off">
+                <form method="POST" action="recipes">
+                    <input type="text" id="search-bar" name="search" placeholder="Enter ingredients here" autocomplete="off">
+                    <button type="button" id="addIngredient">Add</button>
+                    <button type="submit" id="search-btn">Search</button>
+                </form>
                 <div class="avatar"></div>
                 <span id="user-name">Kamil</span>
             </div>
