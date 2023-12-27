@@ -132,12 +132,6 @@ a{
     padding: 1rem;
 }
 
-.recipes{
-}
-
-.trending{
-}
-
 .recipes, .trending{
     text-align: center;
     color: var(--font-primary);
@@ -165,4 +159,26 @@ a{
     padding: 1rem;
     transition: 0.2s ease-in-out;
 }
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card:active{
+    transform: scale(0.9);
+}
+
+.recipes h4, .trending h4{
+    font-size: clamp(1.5rem, 1vw, 2.5rem);
+    color: var(--font-primary);
+    padding: 1rem;
+}
+
+.recipes p, .trending p{
+    font-size: clamp(1.2rem, 1vw, 2rem);
+    color: var(--font-primary);
+}
+
+
+
 
