@@ -87,9 +87,9 @@ a{
 }
 
 .header form{
-    margin-right: auto;
     display: flex;
     gap: 1rem;
+    margin-right: auto;
 }
 
 .header button{
@@ -150,7 +150,6 @@ a{
     gap: 1rem;
     justify-self: center;
     background-color: var(--primary);
-    min-height: 100vh;
     padding: 1rem
 }
 

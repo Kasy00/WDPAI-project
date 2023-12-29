@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="/public/css/home-style.css">
+    <script src="/public/scripts/home.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -18,10 +19,12 @@
         </div>
         <div class="main-content">
             <div class="header">
-                <form method="POST" action="recipes">
+                <form method="POST" action="recipes" id="ingredientsForm">
                     <input type="text" id="search-bar" name="search" placeholder="Enter ingredients here" autocomplete="off">
-                    <button type="button" id="addIngredient">Add</button>
-                    <button type="submit" id="search-btn">Search</button>
+                    <button type="button" id="addIngredientBtn">Add</button>
+                    <div id="addedIngredients"></div>
+                    <input type="hidden" name="hiddenIngredients" id="hiddenIngredients">
+                    <button type="submit" id="searchRecipesBtn">Search</button>
                 </form>
                 <div class="avatar"></div>
                 <span id="user-name">Kamil</span>
