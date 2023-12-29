@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
 
 :root{
     --primary: #ff852ea4;
@@ -7,6 +8,10 @@
     --input-red: #E21A4B;
     --input-green: #46d110;
     --font-primary: #003734;
+}
+
+.mobile-menu{
+    display: none;
 }
 
 *{
@@ -45,9 +50,13 @@ a{
     padding: 2rem;
 }
 
+.main-content{
+    min-height: 100vh;
+}
+
 .logo{
     align-self: center;
-    max-width: clamp(5em, 10.5vw, 13em);
+    max-width: clamp(7em, 10.5vw, 13em);
     height: auto;
 }
 
@@ -173,7 +182,8 @@ a{
     gap: 1rem;
     justify-self: center;
     background-color: var(--primary);
-    padding: 1rem
+    padding: 1rem;
+    min-height: 100vh;
 }
 
 .section h3{
@@ -248,23 +258,31 @@ a{
     }
 
     .sidebar{
-        flex-direction: row;
-        justify-content: space-between;
+        padding: 0.5rem;
+        min-height: 10vh;
+        justify-content: center;
         align-items: center;
-        padding: 1rem;
     }
 
     .sidebar ul{
-        flex-direction: row;
+        display: none;
     }
 
-    .sidebar ul li{
-        font-size: clamp(1.5rem, 1vw, 2.5rem);
+    .logo{
+        display: none;
     }
 
-    .sidebar-btn{
-        max-width: clamp(1.5rem, 2.5vw, 5.5rem);
-        height: auto;
+    .mobile-menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-menu h1{
+        font-family: 'Single Day', cursive;
+        color: var(--font-primary);
+        font-size: 6rem;
+        text-shadow: 0px 6px 13px rgba(0, 55, 52, 1);
     }
 
     .header{

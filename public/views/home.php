@@ -16,6 +16,9 @@
                 <li><img class="sidebar-btn" src="/public/img/profile.svg" alt="profile button">Profile</li>
                 <li><img class="sidebar-btn" src="/public/img/about.svg" alt="about button">About</li>
             </ul>
+            <div class="mobile-menu">
+                <h1>MEALMAGIC</h1>
+            </div>
         </div>
         <div class="main-content">
             <div class="header">
