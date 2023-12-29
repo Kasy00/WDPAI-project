@@ -171,6 +171,11 @@ a{
     border-radius: 1rem;
 }
 
+.trending{
+    background-color: var(--secondary);
+    color: var(--accents);
+}
+
 .cards{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
