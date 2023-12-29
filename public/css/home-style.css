@@ -354,7 +354,7 @@ a{
         gap: 5rem;
         font-size: 5rem;
         font-weight: bold;
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     .hamburger-menu:has(input:checked) ~ .mobile-sidebar{
