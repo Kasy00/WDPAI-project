@@ -163,7 +163,6 @@ a{
 
 .recipes, .trending{
     text-align: center;
-    color: var(--font-primary);
     padding: 1rem;
     -webkit-box-shadow: 0px 0px 100px 9px rgba(165, 33, 33, 0.28);
     -moz-box-shadow: 0px 0px 100px 9px rgba(165, 33, 33, 0.28);
@@ -171,8 +170,15 @@ a{
     border-radius: 1rem;
 }
 
+.recipes h3{
+    color: var(--font-primary);
+}
+
 .trending{
     background-color: var(--secondary);
+}
+
+.trending h3{
     color: var(--accents);
 }
 
