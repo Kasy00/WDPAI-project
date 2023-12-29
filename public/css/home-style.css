@@ -8,6 +8,12 @@
     --input-red: #E21A4B;
     --input-green: #46d110;
     --font-primary: #003734;
+    --bar-width: 6rem;
+    --bar-height: 0.8rem;
+    --hamburger-gap: 0.6rem;
+    --hamburger-margin: 0.8rem;
+    --animation-timing: 0.2s ease-in-out;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
 .mobile-menu{
@@ -258,10 +264,9 @@ a{
     }
 
     .sidebar{
+        display: block;
         padding: 0.5rem;
         min-height: 10vh;
-        justify-content: center;
-        align-items: center;
     }
 
     .sidebar ul{
@@ -275,7 +280,7 @@ a{
     .mobile-menu{
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
     }
 
     .mobile-menu h1{
@@ -283,6 +288,81 @@ a{
         color: var(--font-primary);
         font-size: 6rem;
         text-shadow: 0px 6px 13px rgba(0, 55, 52, 1);
+    }
+
+    .hamburger-menu{
+        --x-width: calc(var(--hamburger-height) * 1.41421356237);
+        display: flex;
+        flex-direction: column;
+        gap: var(--hamburger-gap);
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .hamburger-menu::before,
+    .hamburger-menu::after,
+    .hamburger-menu input{
+        content: "";
+        width: var(--bar-width);
+        height: var(--bar-height);
+        background-color: var(--font-primary);
+        border-radius: 9999px;
+        transform-origin: left center;
+        transition: opacity var(--animation-timing), width var(--animation-timing), rotate var(--animation-timing);
+    }
+
+    .hamburger-menu input{
+        appearance: none;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        pointer-events: none;
+    }
+
+    .hamburger-menu:has(input:checked)::before{
+        rotate: 45deg;
+        width: var(--x-width);
+        translate: 0 calc(var(--bar-height) / -2);
+    }
+
+    .hamburger-menu:has(input:checked)::after{
+        rotate: -45deg;
+        width: var(--x-width);
+        translate: 0 calc(var(--bar-height) / 2);
+    }
+
+    .hamburger-menu input:checked{
+        opacity: 0;
+        width: 0;
+    }
+
+    .mobile-sidebar{
+        display: none;
+        transition: translate var(--animation-timing);
+        background-color: var(--secondary);
+        color: var(--accents);
+        min-height: 30vh;
+        min-width: 100vw;
+        border-radius: 1rem;
+    }
+
+    .mobile-sidebar nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        font-size: 5rem;
+        font-weight: bold;
+        padding: 1rem;
+    }
+
+    .hamburger-menu:has(input:checked) ~ .mobile-sidebar{
+        display: flex;
+    }
+
+    .hamburger-menu:has(input:checked) ~ h1{
+        display: none;
     }
 
     .header{

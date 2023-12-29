@@ -17,6 +17,16 @@
                 <li><img class="sidebar-btn" src="/public/img/about.svg" alt="about button">About</li>
             </ul>
             <div class="mobile-menu">
+                <label class="hamburger-menu">
+                    <input type="checkbox"/>
+                </label>
+                <div class="mobile-sidebar">
+                    <nav>
+                        <div>Home</div>
+                        <div>Profile</div>
+                        <div>About</div>
+                    </nav>
+                </div>
                 <h1>MEALMAGIC</h1>
             </div>
         </div>
