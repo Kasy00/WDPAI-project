@@ -19,15 +19,19 @@
         </div>
         <div class="main-content">
             <div class="header">
-                <form method="POST" action="recipes" id="ingredientsForm">
-                    <input type="text" id="search-bar" name="search" placeholder="Enter ingredients here" autocomplete="off">
-                    <button type="button" id="addIngredientBtn">Add</button>
-                    <div id="addedIngredients"></div>
-                    <input type="hidden" name="hiddenIngredients" id="hiddenIngredients">
-                    <button type="submit" id="searchRecipesBtn">Search</button>
-                </form>
-                <div class="avatar"></div>
-                <span id="user-name">Kamil</span>
+                <div id="upper-header">
+                    <form method="POST" action="recipes" id="ingredientsForm">
+                        <input type="text" id="search-bar" name="search" placeholder="Enter ingredients here" autocomplete="off">
+                        <button type="button" id="addIngredientBtn">Add</button>
+                        <button type="button" id="deleteIngredientBtn">Delete</button>
+
+                        <input type="hidden" name="hiddenIngredients" id="hiddenIngredients">
+                        <button type="submit" id="searchRecipesBtn">Search</button>
+                    </form>
+                    <div class="avatar"></div>
+                    <span id="user-name">Kamil</span>
+                </div>
+                <div id="addedIngredients"></div>
             </div>
             <div class="section">
                 <div class="recipes">
