@@ -38,7 +38,7 @@
                     <li><img src="/public/img/settings.svg" alt="settings">Settings</li>
                     <li><img src="/public/img/BMI.svg" alt="BMI calculator">BMI Calculator</li>
                     <li><img src="/public/img/favourites.svg" alt="favourites recipes">Favourites recipes</li>
-                    <li><img src="/public/img/logout.svg" alt="logout">Logout</li>
+                    <li id="logoutBtn"><img src="/public/img/logout.svg" alt="logout">Logout</li>
                 </ul>
             </div>
         </div>

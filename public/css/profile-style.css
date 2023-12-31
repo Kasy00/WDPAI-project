@@ -42,4 +42,15 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.profile-card > ul li:hover{
+    color: #fff;
+}
+
+#logoutBtn:hover{
+    color: var(--input-red);
 }
