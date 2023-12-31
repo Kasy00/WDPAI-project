@@ -22,6 +22,7 @@
     border-radius: 2rem;
     padding: 3rem;
     color: var(--accents);
+    background-color: var(--font-primary);
 }
 
 #profile-avatar{
