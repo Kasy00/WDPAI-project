@@ -197,6 +197,11 @@ a:hover{
     transition: all 0.7s ease;
 }
 
+#login-btn:hover, #signup-btn:hover{
+    background-color: var(--font-primary);
+    color: #fff;
+}
+
 @media only screen and (max-width: 768px) {
     .card {
       width: 80%;
