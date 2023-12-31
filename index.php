@@ -9,5 +9,6 @@ Routing::get('', 'DefaultController');
 Routing::get('index', 'DefaultController');
 Routing::get('home', 'DefaultController');
 Routing::get('profile', 'DefaultController');
+Routing::get('about', 'DefaultController');
 Routing::post('login', 'SecurityController');
 Routing::run($path);
