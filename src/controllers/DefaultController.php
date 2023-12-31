@@ -11,4 +11,8 @@ class DefaultController extends AppController{
     public function home(){
          $this->render('home');
     }
+
+    public function profile(){
+        $this->render('profile');
+    }
 }
