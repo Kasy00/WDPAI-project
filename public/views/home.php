@@ -41,7 +41,7 @@
                         <input type="hidden" name="hiddenIngredients" id="hiddenIngredients">
                         <button type="submit" id="searchRecipesBtn">Search</button>
                     </form>
-                    <div class="avatar"></div>
+                    <div id="avatar" class="avatar"></div>
                     <span id="user-name">Kamil</span>
                 </div>
                 <div id="addedIngredients"></div>

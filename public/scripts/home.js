@@ -6,7 +6,7 @@ document.getElementById('addIngredientBtn').addEventListener('click', () => {
    const currentIngredients = document.querySelectorAll('.ingredient-item').length;
 
    if (ingredientValue !== '' && currentIngredients <= maxIngredients){
-       const ingredientItem = document.createElement('div');
+        const ingredientItem = document.createElement('div');
          ingredientItem.classList.add('ingredient-item');
          ingredientItem.textContent = ingredientValue;
 

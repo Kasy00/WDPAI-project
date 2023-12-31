@@ -212,8 +212,13 @@ a{
     color: var(--font-primary);
 }
 
+.recipes{
+    border: 1px solid var(--font-primary);
+}
+
 .trending{
     background-color: var(--secondary);
+    border: 1px solid var(--accents);
 }
 
 .trending h3{
