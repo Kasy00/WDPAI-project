@@ -33,7 +33,7 @@
         <div class="main-content">
             <div class="header">
                 <div id="upper-header">
-                    <form method="POST" action="recipes" id="ingredientsForm">
+                    <form method="POST" action="handleRecipes.php" id="ingredientsForm">
                         <input type="text" id="search-bar" name="search" placeholder="Enter ingredients here" autocomplete="off">
                         <button type="button" id="addIngredientBtn">Add</button>
                         <button type="button" id="deleteIngredientBtn">Delete</button>
