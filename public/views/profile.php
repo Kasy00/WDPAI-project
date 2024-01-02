@@ -35,10 +35,10 @@
                 <img id="profile-avatar" src="/public/img/avatar1.svg" alt="avatar">
                 <h2>John Snow</h2>
                 <ul>
-                    <li><img src="/public/img/settings.svg" alt="settings">Settings</li>
-                    <li><img src="/public/img/BMI.svg" alt="BMI calculator">BMI Calculator</li>
-                    <li><img src="/public/img/favourites.svg" alt="favourites recipes">Favourites recipes</li>
-                    <li id="logoutBtn"><img src="/public/img/logout.svg" alt="logout">Logout</li>
+                    <li><a href="home"><img src="/public/img/settings.svg" alt="settings">Settings</a></li>
+                    <li><a href="home"><img src="/public/img/BMI.svg" alt="BMI calculator">BMI Calculator</a></li>
+                    <li><a href="home"><img src="/public/img/favourites.svg" alt="favourites recipes">Favourites recipes</a></li>
+                    <li><a href="login" id="logoutBtn"><img src="/public/img/logout.svg" alt="logout">Logout</a></li>
                 </ul>
             </div>
         </div>

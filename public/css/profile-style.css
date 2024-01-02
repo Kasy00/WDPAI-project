@@ -40,15 +40,22 @@
 }
 
 .profile-card > ul li{
-    display: flex;
-    align-items: center;
     gap: 1rem;
     font-weight: bold;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 }
 
-.profile-card > ul li:hover{
+
+.profile-card ul li a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: var(--accents);
+}
+
+.profile-card > ul li a:hover{
     color: #fff;
 }
 
