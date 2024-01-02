@@ -62,3 +62,27 @@
 #logoutBtn:hover{
     color: var(--input-red);
 }
+
+dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+}
+
+dialog form{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 2rem;
+}
+
+dialog form input{
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+dialog form button{
+    padding: 1.5rem;
+}

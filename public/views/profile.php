@@ -6,6 +6,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="/public/css/home-style.css">
     <link rel="stylesheet" href="/public/css/profile-style.css">
+    <script src="/public/scripts/profile.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -36,11 +37,18 @@
                 <h2>John Snow</h2>
                 <ul>
                     <li><a href="home"><img src="/public/img/settings.svg" alt="settings">Settings</a></li>
-                    <li><a href="home"><img src="/public/img/BMI.svg" alt="BMI calculator">BMI Calculator</a></li>
+                    <li><a id="bmiBtn"><img src="/public/img/BMI.svg" alt="BMI calculator">BMI Calculator</a></li>
                     <li><a href="home"><img src="/public/img/favourites.svg" alt="favourites recipes">Favourites recipes</a></li>
                     <li><a href="login" id="logoutBtn"><img src="/public/img/logout.svg" alt="logout">Logout</a></li>
                 </ul>
             </div>
+            <dialog>
+                <form method="dialog" id="BMI-form">
+                    <input type="text" id="height" placeholder="HEIGHT">
+                    <input type="text" id="weight" placeholder="WEIGHT">
+                    <button type="submit">Calculate BMI</button>
+                </form>
+            </dialog>
         </div>
     </div>
 </body>
