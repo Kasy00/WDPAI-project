@@ -41,11 +41,6 @@ body{
     min-height: 100%;
 }
 
-a{
-    text-decoration: none;
-    color: black;
-}
-
 .sidebar{
     background-color: var(--accents);
     display: flex;
@@ -73,14 +68,18 @@ a{
 }
 
 .sidebar ul li{
-    display: flex;
-    flex-direction: row;
     list-style-type: none;
-    align-items: center;
     cursor: pointer;
-    gap: 1.5rem;
     font-weight: bold;
     font-size: clamp(1.5rem, 1vw, 2.5rem);
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .sidebar ul li:hover{
@@ -360,6 +359,12 @@ a{
         font-size: 5rem;
         font-weight: bold;
         padding: 1rem;
+        color: var(--accents);
+    }
+
+    .mobile-sidebar .menu-link {
+        color: var(--accents);
+        text-decoration: none;
     }
 
     .hamburger-menu:has(input:checked) ~ .mobile-sidebar{

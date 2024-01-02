@@ -12,9 +12,9 @@
         <div class="sidebar">
             <img class="logo" src="/public/img/logo.png" alt="logo">
             <ul>
-                <li><img class="sidebar-btn" src="/public/img/home.svg" alt="home button">Home</li>
-                <li><img class="sidebar-btn" src="/public/img/profile.svg" alt="profile button">Profile</li>
-                <li><img class="sidebar-btn" src="/public/img/about.svg" alt="about button">About</li>
+                <li><a href="home"><img class="sidebar-btn" src="/public/img/home.svg" alt="home button">Home</a></li>
+                <li><a href="profile"><img class="sidebar-btn" src="/public/img/profile.svg" alt="profile button">Profile</a></li>
+                <li><a href="about"><img class="sidebar-btn" src="/public/img/about.svg" alt="about button">About</a></li>
             </ul>
             <div class="mobile-menu">
                 <label class="hamburger-menu">
@@ -22,9 +22,9 @@
                 </label>
                 <div class="mobile-sidebar">
                     <nav>
-                        <div>Home</div>
-                        <div>Profile</div>
-                        <div>About</div>
+                        <div><a href="home" class="menu-link">Home</a></div>
+                        <div><a href="profile" class="menu-link">Profile</a></div>
+                        <div><a href="about" class="menu-link">About</a></div>
                     </nav>
                 </div>
                 <h1>MEALMAGIC</h1>
