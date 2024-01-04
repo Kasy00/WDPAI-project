@@ -71,6 +71,10 @@ dialog{
     border-radius: 1rem;
 }
 
+dialog::backdrop{
+    background-color: rgba(255, 209, 168, 0.5);
+}
+
 dialog form{
     display: flex;
     flex-direction: column;
@@ -81,8 +85,20 @@ dialog form{
 dialog form input{
     padding: 1.5rem;
     border-radius: 1rem;
+    border: 1px solid var(--font-primary);
 }
 
 dialog form button{
     padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 1px solid var(--font-primary);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+dialog form button:hover{
+    background-color: var(--font-primary);
+    border-radius: 1rem;
+    color: #fff;
 }
