@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
 
 :root{
+    --primary: rgba(255, 133, 46, 0.644);
+    --secondary: #01605A;
+    --accents: #FFD0A8;
+    --input-red: #E21A4B;
+    --input-green: #46d110;
+    --font-primary: #003734;
     --bar-width: 6rem;
     --bar-height: 0.8rem;
     --hamburger-gap: 0.6rem;
