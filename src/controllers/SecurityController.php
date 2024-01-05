@@ -39,7 +39,32 @@ class SecurityController extends AppController{
     }
 
     public function register(){
-        //TODO
+        $userRepository = new UserRepository();
+
+        if(!$this->isPost()){
+            return $this->render('login');
+        }
+
+        $firstName = $_POST["first-name"];
+        $lastName = $_POST["last-name"];
+        $email = $_POST["email-sign"];
+        $password = $_POST["password-sign"];
+        $passwordRepeat = $_POST["password-repeat"];
+
+        if($password != $passwordRepeat){
+            return $this->render('login', ['messages' => ['Passwords are different!']]);
+        }
+
+        if($userRepository->getUser($email)){
+            return $this->render('login', ['messages' => ['User with this email already exists']]);
+        }
+
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+        $user = new User($email, $hashedPassword, $firstName, $lastName);
+        $userRepository->addUser($user);
+
+        return $this->render('login', ['messages' => ['You have been succesfully registered!']]);
     }
     
     public function logout(){

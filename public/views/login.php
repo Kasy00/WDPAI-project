@@ -58,7 +58,16 @@
                 <div class="logo">
                     <img src="/public/img/logo.png" alt="Logo">
                 </div>
-                <form action="" method="">
+                <form action="register" method="POST">
+                    <div class="messages">
+                        <?php 
+                            if(isset($messages)){
+                                foreach ($messages as $message) {
+                                    echo $message;
+                                }
+                            }
+                        ?>
+                    </div>
                     <input type="text" name="first-name" id="first-name" placeholder="FIRST NAME" required>
                     <input type="text" name="last-name" id="last-name" placeholder="LAST NAME" required>
                     <input class="email" type="email" name="email-sign" id="email-sign" placeholder="EMAIL" required>
