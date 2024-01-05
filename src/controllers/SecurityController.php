@@ -29,6 +29,26 @@ class SecurityController extends AppController{
             return $this->render('login', ['messages' => ['Incorrect login details!']]);
         }
 
-        return $this->render('home');
-    }  
+        session_start();
+
+        $_SESSION["email"] = $user->getEmail();
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/home");
+        return;
+    }
+
+    public function register(){
+        //TODO
+    }
+    
+    public function logout(){
+        session_start();
+        session_unset();
+        session_destroy();
+
+        $this->render('login', ['messages' => ['You have been successfully logged out!']]);
+    }
+
+
 }

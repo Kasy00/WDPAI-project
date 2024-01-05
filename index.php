@@ -11,4 +11,5 @@ Routing::get('home', 'DefaultController');
 Routing::get('profile', 'DefaultController');
 Routing::get('about', 'DefaultController');
 Routing::post('login', 'SecurityController');
+Routing::post('logout', 'SecurityController');
 Routing::run($path);

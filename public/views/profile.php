@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["email"])){
+        $url = "http://$_SERVER[HTTP_POST]";
+        header("Location: login");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +48,7 @@
                     <li><a href="home"><img src="/public/img/settings.svg" alt="settings">Settings</a></li>
                     <li><a id="bmiBtn"><img src="/public/img/BMI.svg" alt="BMI calculator">BMI Calculator</a></li>
                     <li><a href="home"><img src="/public/img/favourites.svg" alt="favourites recipes">Favourites recipes</a></li>
-                    <li><a href="login" id="logoutBtn"><img src="/public/img/logout.svg" alt="logout">Logout</a></li>
+                    <li><a href="/logout" id="logoutBtn"><img src="/public/img/logout.svg" alt="logout">Logout</a></li>
                 </ul>
             </div>
             <dialog>

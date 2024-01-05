@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["email"])){
+        $url = "http://$_SERVER[HTTP_POST]";
+        header("Location: login");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
