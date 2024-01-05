@@ -47,7 +47,7 @@ class SecurityController extends AppController{
         session_unset();
         session_destroy();
 
-        $this->render('login', ['messages' => ['You have been successfully logged out!']]);
+        return $this->render('login', ["messages" => ['You have been succesfully loggged out!']]);
     }
 
 
