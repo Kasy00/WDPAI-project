@@ -25,7 +25,7 @@ class SecurityController extends AppController{
             return $this->render('login', ['messages' => ['Incorrect login details!']]);
         }
 
-        if ($user->getPassword() !== $password){
+        if (!password_verify($password, $user->getPassword())){
             return $this->render('login', ['messages' => ['Incorrect login details!']]);
         }
 
