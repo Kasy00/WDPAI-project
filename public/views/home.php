@@ -5,7 +5,6 @@
         exit();
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,8 +45,8 @@
                         <button type="button" id="addIngredientBtn">Add</button>
                         <button type="button" id="deleteIngredientBtn">Delete</button>
 
-                        <input type="hidden" name="hiddenIngredients" id="hiddenIngredients">
-                        <button type="submit" id="searchRecipesBtn">Search</button>
+                        <input type="hidden" id="hiddenIngredients">
+                        <button type="button" id="searchRecipesBtn">Search</button>
                     </form>
                     <div id="avatar" class="avatar"></div>
                     <span id="user-name">Kamil</span>
@@ -58,7 +57,7 @@
                 <div class="recipes">
                     <h3>Recipes suggested for you</h3>
                     <div class="cards">
-                        <div class="card">
+                        <!-- <div class="card">
                             <img src="/public/img/recipe1.png" alt="recipe1">
                             <div class="card-info">
                                 <h4>Recipe 1</h4>
@@ -120,7 +119,7 @@
                                 <h4>Recipe 1</h4>
                                 <p>Time: 30 min</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="trending">
