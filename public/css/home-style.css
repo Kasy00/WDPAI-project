@@ -243,6 +243,14 @@ body{
     cursor: pointer;
 }
 
+.not-found{
+    color: var(--secondary);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
 .card:hover{
     transform: scale(1.05);
 }

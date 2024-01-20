@@ -1,4 +1,5 @@
 const searchRecipesBtn = document.getElementById('searchRecipesBtn');
+const cards = document.querySelector('.cards');
 
 const maxIngredients = 8;
 
@@ -41,31 +42,41 @@ function updateIngredients(){
 
 searchRecipesBtn.addEventListener('click', searchRecipes);
 
-function searchRecipes(){
+function searchRecipes() {
     const ingredientsList = document.querySelectorAll('.ingredient-item');
     const ingredientsArray = Array.from(ingredientsList).map(item => item.textContent);
 
-    const apiKey = 'bfa43ec4eb6c4c0ead14ff8c102dfb29';
+    const apiKey = '43a9675a98214cf99e2f931732573d7a';
     const ingredientsString = ingredientsArray.join(',');
-    const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${ingredientsString}`;
+    const url = `https://api.spoonacular.com/recipes/search?apiKey=${apiKey}&query=&includeIngredients=${ingredientsString}`;
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
             let html = ""
-    
-            data.forEach(recipe => {
-                html += `
-                    <div class="card">
-                        <img src="${recipe.image}" alt="${recipe.title}">
-                        <div class="card-info">
-                            <h4>${recipe.title}</h4>
-                            <p>Time: ${recipe.readyInMinutes} min</p>
+            let foundRecipes = false;
+            
+            if(data.results){
+                data.results.forEach(recipe => {
+                    foundRecipes = true;
+                    html += `
+                        <div class="card">
+                            <img src="${recipe.image}">
+                            <div class="card-info">
+                                <h4>${recipe.title}</h4>
+                            </div>
                         </div>
-                    </div>
-                `
-            });
-            document.querySelector('.recipes .cards').innerHTML = html;
+                    `;
+                    cards.classList.remove('not-found');
+                });
+            }
+
+            if (!foundRecipes) {
+                html = "Unfortunately, we didn't find any recipes :(";
+                cards.classList.add('not-found');
+            }
+
+            document.querySelector('.recipes .cards').innerHTML = html;   
         })
         .catch(error => console.error('Error:', error));
 }
