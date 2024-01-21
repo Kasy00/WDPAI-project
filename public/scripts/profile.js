@@ -1,13 +1,19 @@
-const dialog = document.querySelector('dialog');
+const bmiDialog = document.getElementById('bmi-dialog');
+const photoDialog = document.getElementById('photo-dialog');
 const bmiBtn = document.getElementById('bmiBtn');
+const profileAvatarBtn = document.getElementById('profile-avatar-btn');
 
 bmiBtn.addEventListener('click', () =>{
-   dialog.showModal();
+    bmiDialog.showModal();
 });
 
-dialog.addEventListener('click', (e) => {
-    const dialogDimensions = dialog.getBoundingClientRect();
+bmiDialog.addEventListener('click', (e) => {
+    const dialogDimensions = bmiDialog.getBoundingClientRect();
     if (e.clientX < dialogDimensions.left || e.clientX > dialogDimensions.right || e.clientY < dialogDimensions.top || e.clientY > dialogDimensions.bottom) {
-        dialog.close();
+        bmiDialog.close();
     }
+});
+
+profileAvatarBtn.addEventListener('click', () => {
+    photoDialog.showModal();
 });

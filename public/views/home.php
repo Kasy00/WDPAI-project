@@ -49,7 +49,7 @@
                         <button type="button" id="searchRecipesBtn">Search</button>
                     </form>
                     <div id="avatar" class="avatar"></div>
-                    <span id="user-name">Kamil</span>
+                    <span id="user-name"><?php echo $_SESSION["name"]; ?></span>
                 </div>
                 <div id="addedIngredients"></div>
             </div>
@@ -57,95 +57,13 @@
                 <div class="recipes">
                     <h3>Recipes suggested for you</h3>
                     <div class="cards">
-                        <!-- <div class="card">
-                            <img src="/public/img/recipe1.png" alt="recipe1">
-                            <div class="card-info">
-                                <h4>Recipe 1</h4>
-                                <p>Time: 30 min</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="/public/img/recipe1.png" alt="recipe1">
-                            <div class="card-info">
-                                <h4>Recipe 1</h4>
-                                <p>Time: 30 min</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="/public/img/recipe1.png" alt="recipe1">
-                            <div class="card-info">
-                                <h4>Recipe 1</h4>
-                                <p>Time: 30 min</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="/public/img/recipe1.png" alt="recipe1">
-                            <div class="card-info">
-                                <h4>Recipe 1</h4>
-                                <p>Time: 30 min</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="/public/img/recipe1.png" alt="recipe1">
-                            <div class="card-info">
-                                <h4>Recipe 1</h4>
-                                <p>Time: 30 min</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="/public/img/recipe1.png" alt="recipe1">
-                            <div class="card-info">
-                                <h4>Recipe 1</h4>
-                                <p>Time: 30 min</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="/public/img/recipe1.png" alt="recipe1">
-                            <div class="card-info">
-                                <h4>Recipe 1</h4>
-                                <p>Time: 30 min</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="/public/img/recipe1.png" alt="recipe1">
-                            <div class="card-info">
-                                <h4>Recipe 1</h4>
-                                <p>Time: 30 min</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="/public/img/recipe1.png" alt="recipe1">
-                            <div class="card-info">
-                                <h4>Recipe 1</h4>
-                                <p>Time: 30 min</p>
-                            </div>
-                        </div> -->
+                       
                     </div>
                 </div>
                 <div class="trending">
                     <h3>Trending</h3>
                     <div class="cards">
-                        <!-- <div class="card">
-                            <img src="/public/img/recipe2.png" alt="recipe2">
-                            <div class="card-info">
-                                <h4>Recipe 2</h4>
-                                <p>Time: 30 min</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="/public/img/recipe2.png" alt="recipe2">
-                            <div class="card-info">
-                                <h4>Recipe 2</h4>
-                                <p>Time: 30 min</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="/public/img/recipe2.png" alt="recipe2">
-                            <div class="card-info">
-                                <h4>Recipe 2</h4>
-                                <p>Time: 30 min</p>
-                            </div>
-                        </div> -->
+                        
                     </div>
                 </div>
                 <dialog id="recipe-dialog" class="recipe-dialog">

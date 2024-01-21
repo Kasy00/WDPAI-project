@@ -32,6 +32,8 @@ class SecurityController extends AppController{
         session_start();
 
         $_SESSION["email"] = $user->getEmail();
+        $_SESSION["name"] = $user->getName();
+        $_SESSION["surname"] = $user->getSurname();
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/home");

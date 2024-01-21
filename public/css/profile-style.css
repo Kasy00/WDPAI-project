@@ -1,3 +1,7 @@
+body{
+    overflow: hidden;
+}
+
 .profile-container{
     background-color: var(--secondary);
     display: flex;
@@ -25,9 +29,25 @@
     background-color: var(--font-primary);
 }
 
+#profile-avatar-btn{
+    border-radius: 50%;
+    border: 2px solid var(--accents);
+    transition: all 0.2s ease-in-out;
+}
+
+#profile-avatar-btn:hover{
+    cursor: pointer;
+}
+
+#profile-avatar-btn:active{
+    transform: scale(0.9);
+
+}
+
 #profile-avatar{
     width: 100%;
     height: auto;
+    border-radius: 50%;
 }
 
 .profile-card > ul{

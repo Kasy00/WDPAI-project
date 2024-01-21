@@ -41,8 +41,10 @@
         </div>
         <div class="profile-container">
             <div class="profile-card">
-                <img id="profile-avatar" src="/public/img/avatar1.svg" alt="avatar">
-                <h2>John Snow</h2>
+                <button id="profile-avatar-btn">
+                    <img id="profile-avatar" src="/public/img/profile-basic.jpg" alt="avatar">
+                </button>
+                <h2><?php echo $_SESSION["name"] . " " . $_SESSION["surname"]; ?></h2>
                 <ul>
                     <li><a href="home"><img src="/public/img/settings.svg" alt="settings">Settings</a></li>
                     <li><a id="bmiBtn"><img src="/public/img/BMI.svg" alt="BMI calculator">BMI Calculator</a></li>
@@ -50,11 +52,17 @@
                     <li><a href="/logout" id="logoutBtn"><img src="/public/img/logout.svg" alt="logout">Logout</a></li>
                 </ul>
             </div>
-            <dialog>
+            <dialog id="bmi-dialog">
                 <form method="dialog" id="BMI-form">
                     <input type="text" id="height" placeholder="HEIGHT">
                     <input type="text" id="weight" placeholder="WEIGHT">
                     <button type="submit">Calculate BMI</button>
+                </form>
+            </dialog>
+            <dialog id="photo-dialog">
+                <form action="addAvatar" method="POST" id="avatar-form" ENCTYPE="multipart/form-data">
+                    <input type="file" name="profile-picture" id="profile-picture">
+                    <button type="submit">Set avatar</button>
                 </form>
             </dialog>
         </div>
