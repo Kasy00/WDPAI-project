@@ -47,6 +47,13 @@ function searchRecipes() {
     const ingredientsList = document.querySelectorAll('.ingredient-item');
     const ingredientsArray = Array.from(ingredientsList).map(item => item.textContent);
 
+    if (ingredientsArray.length === 0){
+        const cards = document.querySelector('.recipes .cards');
+        cards.innerHTML = "Please add at least one ingredient then search"
+        cards.classList.add('not-found');
+        return;
+    }
+
     const ingredientsString = ingredientsArray.join(',');
     const url = `https://api.spoonacular.com/recipes/search?apiKey=${apiKey}&query=&includeIngredients=${ingredientsString}&number=9`;
 
@@ -109,7 +116,7 @@ function showRecipeDetails(recipeId) {
         .then(data => {
             document.getElementById('recipeImage').src = data.image;
             document.getElementById('recipeTitle').textContent = data.title;
-            document.getElementById('recipeInstructions').textContent = data.instructions;
+            document.getElementById('recipeInstructions').innerHTML = data.instructions;
             document.getElementById('recipeTime').textContent = `Time: ${data.readyInMinutes} minutes`;
             document.getElementById('recipeServings').textContent = `Servings: ${data.servings}`;
 
