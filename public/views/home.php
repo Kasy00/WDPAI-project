@@ -125,7 +125,7 @@
                 <div class="trending">
                     <h3>Trending</h3>
                     <div class="cards">
-                        <div class="card">
+                        <!-- <div class="card">
                             <img src="/public/img/recipe2.png" alt="recipe2">
                             <div class="card-info">
                                 <h4>Recipe 2</h4>
@@ -145,8 +145,30 @@
                                 <h4>Recipe 2</h4>
                                 <p>Time: 30 min</p>
                             </div>
-                        </div>
+                        </div> -->
+                    </div>
                 </div>
+                <dialog id="recipe-dialog" class="recipe-dialog">
+                    <div class="dialog-content">
+                        <div class="dialog-header">
+                            <h3 id="recipeTitle">Recipe 1</h3>
+                        </div>
+                        <div class="dialog-body">
+                            <img id="recipeImage" src="" alt="">
+                            <div class="dialog-info">
+                                <p id="recipeInstructions">
+                                </p>
+                                <div class="dialog-details">
+                                    <p id="recipeTime"></p>
+                                    <p id="recipeServings"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dialog-footer">
+                            <button class="close-btn">Close</button>
+                        </div>
+                    </div>
+                </dialog>
             </div>
         </div>
     </div>

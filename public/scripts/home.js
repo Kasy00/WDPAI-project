@@ -1,5 +1,6 @@
 const searchRecipesBtn = document.getElementById('searchRecipesBtn');
 const cards = document.querySelector('.cards');
+const apiKey = '42c97b6e7560428ea171c7eb780122d0';
 
 const maxIngredients = 8;
 
@@ -46,37 +47,106 @@ function searchRecipes() {
     const ingredientsList = document.querySelectorAll('.ingredient-item');
     const ingredientsArray = Array.from(ingredientsList).map(item => item.textContent);
 
-    const apiKey = '43a9675a98214cf99e2f931732573d7a';
     const ingredientsString = ingredientsArray.join(',');
-    const url = `https://api.spoonacular.com/recipes/search?apiKey=${apiKey}&query=&includeIngredients=${ingredientsString}`;
+    const url = `https://api.spoonacular.com/recipes/search?apiKey=${apiKey}&query=&includeIngredients=${ingredientsString}&number=9`;
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        const cards = document.querySelector('.recipes .cards');
+        cards.innerHTML = '';
+
+        if(data.results){
+            const loadImages = data.results.map(recipe => {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.src = `https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`;
+
+                    img.onload = () => {
+                        const card = document.createElement('div');
+                        card.classList.add('card');
+                        
+                        card.innerHTML = `
+                            <img src="${img.src}" alt="${recipe.title}">
+                            <div class="card-info">
+                                <h4>${recipe.title}</h4>
+                            </div>
+                        `;
+                        cards.classList.remove('not-found');
+                        card.addEventListener('click', () => showRecipeDetails(recipe.id));
+                        cards.appendChild(card);
+
+                        resolve();
+                    };
+
+                    img.onerror = reject;
+                });
+            });
+
+            Promise.all(loadImages)
+                .then(() => {
+                    if (cards.children.length === 0) {
+                        cards.innerHTML = "Unfortunately, we didn't find any recipes :(";
+                        cards.classList.add('not-found');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        } else {
+            cards.innerHTML = "Unfortunately, we didn't find any recipes :(";
+            cards.classList.add('not-found');
+        }
+
+        document.getElementById('addedIngredients').innerHTML = ''; 
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function showRecipeDetails(recipeId) {
+    const url = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`;
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            let html = ""
-            let foundRecipes = false;
-            
-            if(data.results){
-                data.results.forEach(recipe => {
-                    foundRecipes = true;
-                    html += `
-                        <div class="card">
-                            <img src="${recipe.image}">
-                            <div class="card-info">
-                                <h4>${recipe.title}</h4>
-                            </div>
-                        </div>
-                    `;
-                    cards.classList.remove('not-found');
-                });
-            }
+            document.getElementById('recipeImage').src = data.image;
+            document.getElementById('recipeTitle').textContent = data.title;
+            document.getElementById('recipeInstructions').textContent = data.instructions;
+            document.getElementById('recipeTime').textContent = `Time: ${data.readyInMinutes} minutes`;
+            document.getElementById('recipeServings').textContent = `Servings: ${data.servings}`;
 
-            if (!foundRecipes) {
-                html = "Unfortunately, we didn't find any recipes :(";
-                cards.classList.add('not-found');
-            }
+            const dialog = document.getElementById('recipe-dialog');
+            dialog.showModal();
 
-            document.querySelector('.recipes .cards').innerHTML = html;   
+            const closeBtn = document.querySelector('.close-btn');
+            closeBtn.addEventListener('click', () =>{
+                dialog.close();
+            });
         })
         .catch(error => console.error('Error:', error));
+}
+
+window.onload = function(){
+    const url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=4`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            data.recipes.forEach(recipe =>{
+                const img = new Image();
+                img.src = `https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`;
+
+                img.onload = () => {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    
+                    card.innerHTML = `
+                        <img src="${img.src}" alt="${recipe.title}">
+                        <div class="card-info">
+                            <h4>${recipe.title}</h4>
+                        </div>
+                    `;
+                    card.addEventListener('click', () => showRecipeDetails(recipe.id));
+                    document.querySelector('.trending .cards').appendChild(card);
+                };
+            })
+        }) 
 }
