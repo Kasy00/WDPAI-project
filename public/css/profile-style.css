@@ -30,8 +30,9 @@ body{
 }
 
 #profile-avatar-btn{
-    border-radius: 50%;
-    border: 2px solid var(--accents);
+    background-color: transparent;
+    border: none;
+    padding: 0;
     transition: all 0.2s ease-in-out;
 }
 
@@ -45,9 +46,10 @@ body{
 }
 
 #profile-avatar{
-    width: 100%;
-    height: auto;
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .profile-card > ul{

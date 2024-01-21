@@ -34,6 +34,7 @@ class SecurityController extends AppController{
         $_SESSION["email"] = $user->getEmail();
         $_SESSION["name"] = $user->getName();
         $_SESSION["surname"] = $user->getSurname();
+        $_SESSION["avatar"] = $user->getAvatarPath();
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/home");
@@ -52,6 +53,7 @@ class SecurityController extends AppController{
         $email = $_POST["email-sign"];
         $password = $_POST["password-sign"];
         $passwordRepeat = $_POST["password-repeat"];
+        $avatar_path = '/public/img/profile-basic.jpg';
 
         if($password != $passwordRepeat){
             return $this->render('login', ['messages' => ['Passwords are different!']]);

@@ -23,21 +23,33 @@ class UserRepository extends Repository
             $user['email'],
             $user['password'],
             $user['name'],
-            $user['surname']
+            $user['surname'],
+            $user['avatar_path']
         );
     }
 
     public function addUser(User $user){
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO public.users (name, surname, email, password)
-            VALUES (?, ?, ?, ?)
+            INSERT INTO public.users (name, surname, email, password, avatar_path)
+            VALUES (?, ?, ?, ?, ?)
         ');
 
         $stmt->execute([
             $user->getName(),
             $user->getSurname(),
             $user->getEmail(),
-            $user->getPassword()
+            $user->getPassword(),
+            $user->getAvatarPath()
         ]);
+    }
+
+    public function updateUserAvatar(string $email, string $avatarPath){
+        $stmt = $this->database->connect()->prepare('
+            UPDATE public.users SET avatar_path = :avatarPath WHERE email = :email
+        ');
+
+        $stmt->bindParam(':avatarPath', $avatarPath, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
     }
 }

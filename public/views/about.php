@@ -4,6 +4,11 @@
         header("Location: login");
         exit();
     }
+    if (isset($_SESSION['avatar_path'])) {
+        $avatar = $_SESSION['avatar_path'];
+    } else {
+        $avatar = '/public/img/profile-basic.jpg';
+    }
 ?>
 
 <!DOCTYPE html>

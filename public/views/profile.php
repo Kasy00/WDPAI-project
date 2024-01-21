@@ -4,6 +4,12 @@
         header("Location: login");
         exit();
     }
+
+    if (isset($_SESSION['avatar_path'])) {
+        $avatar = $_SESSION['avatar_path'];
+    } else {
+        $avatar = '/public/img/profile-basic.jpg';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -42,8 +48,17 @@
         <div class="profile-container">
             <div class="profile-card">
                 <button id="profile-avatar-btn">
-                    <img id="profile-avatar" src="/public/img/profile-basic.jpg" alt="avatar">
+                    <img src="/public/uploads/<?php echo $avatar; ?>" alt="" id='profile-avatar'>
                 </button>
+                <div class="messages">
+                        <?php 
+                            if(isset($messages)){
+                                foreach ($messages as $message) {
+                                    echo $message;
+                                }
+                            }
+                        ?>
+                </div>
                 <h2><?php echo $_SESSION["name"] . " " . $_SESSION["surname"]; ?></h2>
                 <ul>
                     <li><a href="home"><img src="/public/img/settings.svg" alt="settings">Settings</a></li>

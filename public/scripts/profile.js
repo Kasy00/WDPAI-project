@@ -17,3 +17,10 @@ bmiDialog.addEventListener('click', (e) => {
 profileAvatarBtn.addEventListener('click', () => {
     photoDialog.showModal();
 });
+
+photoDialog.addEventListener('click', (e) => {
+    const dialogDimensions = photoDialog.getBoundingClientRect();
+    if (e.clientX < dialogDimensions.left || e.clientX > dialogDimensions.right || e.clientY < dialogDimensions.top || e.clientY > dialogDimensions.bottom) {
+        photoDialog.close();
+    }
+});
