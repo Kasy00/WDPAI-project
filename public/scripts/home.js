@@ -1,6 +1,6 @@
 const searchRecipesBtn = document.getElementById('searchRecipesBtn');
 const cards = document.querySelector('.cards');
-const apiKey = '42c97b6e7560428ea171c7eb780122d0';
+const apiKey = '43a9675a98214cf99e2f931732573d7a';
 
 const maxIngredients = 8;
 
@@ -137,23 +137,28 @@ window.onload = function(){
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            data.recipes.forEach(recipe =>{
-                const img = new Image();
-                img.src = `https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`;
-
-                img.onload = () => {
-                    const card = document.createElement('div');
-                    card.classList.add('card');
-                    
-                    card.innerHTML = `
-                        <img src="${img.src}" alt="${recipe.title}">
-                        <div class="card-info">
-                            <h4>${recipe.title}</h4>
-                        </div>
-                    `;
-                    card.addEventListener('click', () => showRecipeDetails(recipe.id));
-                    document.querySelector('.trending .cards').appendChild(card);
-                };
-            })
+            if (data.recipes) {
+                data.recipes.forEach(recipe =>{
+                    const img = new Image();
+                    img.src = `https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`;
+    
+                    img.onload = () => {
+                        const card = document.createElement('div');
+                        card.classList.add('card');
+                        
+                        card.innerHTML = `
+                            <img src="${img.src}" alt="${recipe.title}">
+                            <div class="card-info">
+                                <h4>${recipe.title}</h4>
+                            </div>
+                        `;
+                        card.addEventListener('click', () => showRecipeDetails(recipe.id));
+                        document.querySelector('.trending .cards').appendChild(card);
+                    };
+                })
+            } else {
+                document.querySelector('.trending .cards').innerHTML = "Unfortunately, we didn't find any recipes :(";
+                document.querySelector('.trending .cards').classList.add('not-found');
+            }
         }) 
 }

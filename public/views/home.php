@@ -53,8 +53,12 @@
                         <input type="hidden" id="hiddenIngredients">
                         <button type="button" id="searchRecipesBtn">Search</button>
                     </form>
-                    <div id="avatar" class="avatar"></div>
-                    <span id="user-name"><?php echo $_SESSION["name"]; ?></span>
+                    <div id="avatar" class="avatar">
+                        <a href="/profile">
+                            <img src="/public/uploads/<?php echo $avatar; ?>" alt="" id='profile-avatar'>
+                            <span id="user-name"><?php echo $_SESSION["name"]; ?></span>
+                        </a>
+                    </div>
                 </div>
                 <div id="addedIngredients"></div>
             </div>

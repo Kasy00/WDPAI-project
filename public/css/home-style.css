@@ -167,17 +167,16 @@ body{
     border: 2px solid var(--primary);
 }
 
-.avatar{
-    border: 1px solid #fff;
-    width: 6rem;
-    height: 6rem;
-    border-radius: 50%;
-    margin-left: 1.5rem;
+.avatar a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 #user-name{
     margin-left: 1.5rem;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 1vw, 2.5rem);
     color: #fff;
 }
 
@@ -337,9 +336,20 @@ body{
     border-radius: 1rem;
 }
 
+#profile-avatar{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 @media only screen and (max-width: 768px){
     .container{
         grid-template-columns: 1fr;
+    }
+
+    #avatar{
+        display: none;
     }
 
     .sidebar{
@@ -456,17 +466,13 @@ body{
         padding: 1rem;
     }
 
+    #upper-header{
+        display: flex;
+        flex-direction: column;
+    }
+
     #search-bar{
         width: clamp(170px, 70% + 1rem, 1000px);
-    }
-
-    .avatar{
-        width: 4rem;
-        height: 4rem;
-    }
-
-    #user-name{
-        font-size: 1.5rem;
     }
 
     .section{
