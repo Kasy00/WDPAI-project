@@ -55,7 +55,7 @@
                     </form>
                     <div id="avatar" class="avatar">
                         <a href="/profile">
-                            <img src="/public/uploads/<?php echo $avatar; ?>" alt="" id='profile-avatar'>
+                            <img src="<?php echo $avatar == '/public/img/profile-basic.jpg' ? $avatar : '/public/uploads/' . $avatar; ?>" alt="" id='profile-avatar'>
                             <span id="user-name"><?php echo $_SESSION["name"]; ?></span>
                         </a>
                     </div>

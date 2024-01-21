@@ -48,7 +48,7 @@
         <div class="profile-container">
             <div class="profile-card">
                 <button id="profile-avatar-btn">
-                    <img src="/public/uploads/<?php echo $avatar; ?>" alt="" id='profile-avatar'>
+                    <img src="<?php echo $avatar == '/public/img/profile-basic.jpg' ? $avatar : '/public/uploads/' . $avatar; ?>" alt="" id='profile-avatar'>
                 </button>
                 <div class="messages">
                         <?php 

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
 require_once __DIR__.'/../repository/UserRepository.php';
@@ -21,11 +21,13 @@ class FileController extends AppController{
         
 
         if ($this->isPost() && is_uploaded_file($_FILES['profile-picture']['tmp_name']) && $this->validate($_FILES['profile-picture'])) {
-            $targetPath = dirname(__DIR__) . self::UPLOAD_DIRECTORY . uniqid() . $_FILES['profile-picture']['name'];
+            $uniqueFileName = uniqid() . $_FILES['profile-picture']['name'];
+            $targetPath = dirname(__DIR__) . self::UPLOAD_DIRECTORY . $uniqueFileName;
+
+            $_SESSION['avatar_path'] = $uniqueFileName;
             move_uploaded_file($_FILES['profile-picture']['tmp_name'], $targetPath);
 
-            $_SESSION['avatar_path'] = $_FILES['profile-picture']['name'];
-            $userRepository->updateUserAvatar($userEmail, $_FILES['profile-picture']['name']);
+            $userRepository->updateUserAvatar($userEmail, $uniqueFileName);
             return $this->render('profile', ['messages' => ['Avatar has been successfully updated!']]);
         }
 

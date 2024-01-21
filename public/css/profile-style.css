@@ -124,3 +124,29 @@ dialog form button:hover{
     border-radius: 1rem;
     color: #fff;
 }
+
+@media only screen and (max-width: 768px){
+    .profile-container{
+        flex-direction: column;
+    }
+
+    .profile-card{
+        width: 100%;
+        border: none;
+        border-radius: 0;
+    }
+
+    .profile-card > ul{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .profile-card > ul li{
+        font-size: 1.5rem;
+    }
+
+    #profile-avatar{
+        width: 10rem;
+        height: 10rem;
+    }
+}
