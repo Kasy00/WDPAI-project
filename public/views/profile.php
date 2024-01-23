@@ -5,8 +5,8 @@
         exit();
     }
 
-    if (isset($_SESSION['avatar_path'])) {
-        $avatar = $_SESSION['avatar_path'];
+    if (isset($_SESSION["avatar"])) {
+        $avatar = $_SESSION["avatar"];
     } else {
         $avatar = '/public/img/profile-basic.jpg';
     }

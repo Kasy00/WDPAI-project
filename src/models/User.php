@@ -52,7 +52,7 @@ class User{
         $this->avatarPath = $avatarPath;
     }
 
-    public function getAvatarPath(): ?string{
+    public function getAvatarPath(): string{
         return $this->avatarPath;
     }
 }

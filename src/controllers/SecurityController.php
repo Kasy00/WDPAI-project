@@ -28,7 +28,7 @@ class SecurityController extends AppController{
         if (!password_verify($password, $user->getPassword())){
             return $this->render('login', ['messages' => ['Incorrect login details!']]);
         }
-
+        
         session_start();
 
         $_SESSION["email"] = $user->getEmail();
@@ -65,7 +65,7 @@ class SecurityController extends AppController{
 
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-        $user = new User($email, $hashedPassword, $firstName, $lastName);
+        $user = new User($email, $hashedPassword, $firstName, $lastName, $avatar_path);
         $userRepository->addUser($user);
 
         return $this->render('login', ['messages' => ['You have been succesfully registered!']]);
@@ -73,7 +73,6 @@ class SecurityController extends AppController{
     
     public function logout(){
         session_start();
-        session_unset();
         session_destroy();
 
         return $this->render('login', ["messages" => ['You have been succesfully loggged out!']]);

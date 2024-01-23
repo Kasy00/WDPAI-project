@@ -24,7 +24,7 @@ class FileController extends AppController{
             $uniqueFileName = uniqid() . $_FILES['profile-picture']['name'];
             $targetPath = dirname(__DIR__) . self::UPLOAD_DIRECTORY . $uniqueFileName;
 
-            $_SESSION['avatar_path'] = $uniqueFileName;
+            $_SESSION["avatar"] = $uniqueFileName;
             move_uploaded_file($_FILES['profile-picture']['tmp_name'], $targetPath);
 
             $userRepository->updateUserAvatar($userEmail, $uniqueFileName);
