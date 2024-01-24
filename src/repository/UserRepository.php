@@ -55,7 +55,7 @@ class UserRepository extends Repository
 
     public function updateUserAvatar(string $email, string $avatarPath){
         $stmt = $this->database->connect()->prepare('
-            UPDATE public.users SET avatar_path = :avatarPath WHERE email = :email
+            SELECT update_user_avatar(:email, :avatarPath)
         ');
 
         $stmt->bindParam(':avatarPath', $avatarPath, PDO::PARAM_STR);
