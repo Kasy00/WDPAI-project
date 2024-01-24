@@ -29,18 +29,28 @@ class UserRepository extends Repository
     }
 
     public function addUser(User $user){
-        $stmt = $this->database->connect()->prepare('
-            INSERT INTO public.users (name, surname, email, password, avatar_path)
-            VALUES (?, ?, ?, ?, ?)
-        ');
+        $pdo = $this->database->connect();
+        $pdo->beginTransaction();
 
-        $stmt->execute([
-            $user->getName(),
-            $user->getSurname(),
-            $user->getEmail(),
-            $user->getPassword(),
-            $user->getAvatarPath()
-        ]);
+        try {
+            $stmt = $pdo->prepare('
+                INSERT INTO public.users (name, surname, email, password, avatar_path)
+                VALUES (?, ?, ?, ?, ?)
+            ');
+
+            $stmt->execute([
+                $user->getName(),
+                $user->getSurname(),
+                $user->getEmail(),
+                $user->getPassword(),
+                $user->getAvatarPath()
+            ]);
+
+            $pdo->commit();
+        } catch (Exception $e) {
+            $pdo->rollBack();
+            throw $e;
+        }
     }
 
     public function updateUserAvatar(string $email, string $avatarPath){
