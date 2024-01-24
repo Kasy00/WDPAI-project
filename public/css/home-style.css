@@ -242,6 +242,11 @@ body{
     cursor: pointer;
 }
 
+.trending .cards .card img{
+    max-width: 100%;
+    height: auto;
+}
+
 .not-found{
     color: var(--secondary);
     font-size: 1.8rem;
