@@ -2,6 +2,7 @@ const bmiDialog = document.getElementById('bmi-dialog');
 const photoDialog = document.getElementById('photo-dialog');
 const bmiBtn = document.getElementById('bmiBtn');
 const profileAvatarBtn = document.getElementById('profile-avatar-btn');
+const bmiForm = document.getElementById('BMI-form');
 
 bmiBtn.addEventListener('click', () =>{
     bmiDialog.showModal();

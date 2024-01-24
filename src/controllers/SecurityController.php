@@ -36,6 +36,9 @@ class SecurityController extends AppController{
         $_SESSION["surname"] = $user->getSurname();
         $_SESSION["avatar"] = $user->getAvatarPath();
 
+        $bmi = $userRepository->getBMI($user->getEmail());
+        $_SESSION["bmi"] = $bmi;
+
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/home");
         return;

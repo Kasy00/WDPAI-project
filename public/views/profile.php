@@ -59,7 +59,7 @@
                             }
                         ?>
                 </div>
-                <h2><?php echo $_SESSION["name"] . " " . $_SESSION["surname"]; ?></h2>
+                <h2 class="user-info"><?php echo $_SESSION["name"] . " " . $_SESSION["surname"]; ?> <br>BMI: <?php echo $_SESSION["bmi"]; ?></h2>
                 <ul>
                     <li><a href="home"><img src="/public/img/settings.svg" alt="settings">Settings</a></li>
                     <li><a id="bmiBtn"><img src="/public/img/BMI.svg" alt="BMI calculator">BMI Calculator</a></li>
@@ -68,9 +68,9 @@
                 </ul>
             </div>
             <dialog id="bmi-dialog">
-                <form method="dialog" id="BMI-form">
-                    <input type="text" id="height" placeholder="HEIGHT">
-                    <input type="text" id="weight" placeholder="WEIGHT">
+                <form action="calculateBMI" method="POST" id="BMI-form">
+                    <input type="number" id="height" name="height" min=1 placeholder="HEIGHT">
+                    <input type="number" id="weight" name="weight" min=1 placeholder="WEIGHT">
                     <button type="submit">Calculate BMI</button>
                 </form>
             </dialog>

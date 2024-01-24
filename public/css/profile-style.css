@@ -77,6 +77,13 @@ body{
     color: var(--accents);
 }
 
+.user-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .profile-card > ul li a:hover{
     color: #fff;
 }

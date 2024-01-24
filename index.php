@@ -14,4 +14,5 @@ Routing::post('login', 'SecurityController');
 Routing::post('logout', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('addAvatar', 'FileController');
+Routing::post('calculateBMI', 'BMIController');
 Routing::run($path);
