@@ -27,6 +27,8 @@ MealMagic offers a variety of features to help you discover and create delicious
 * **Ingredient-Based Recipe Search**: Users can search for recipes based on the ingredients they have on hand.
 * **Recipe Suggestions**: The application provides a variety of culinary options, helping users discover new recipes.
 * **User Profile Customization**: Users can customize their profiles, including the ability to set a custom avatar.
+* **User Favorites Recipes**: Users can add recipes to their favorites and display them.
+* **User BMI calculator**: Users can calculate their BMI, system store it in database and display on user page.
 * **Integration with Spoonacular API**: The application leverages the Spoonacular API to provide a vast array of recipes.
 * **Responsive Design**: The application is designed to work well on both desktop and mobile devices.
 * **Dockerized Application**: The application is containerized using Docker, making it easy to set up and run in any environment.
