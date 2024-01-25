@@ -1,13 +1,54 @@
 body{
-    overflow: hidden;
+    overflow: auto;
 }
 
 .profile-container{
     background-color: var(--secondary);
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
+}
+
+.show-favorites{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.favorites-info{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-self: center;
+    padding: 1rem;
+}
+
+.favorites-info > h1{
+    font-size: clamp(2rem, 2vw, 3rem);
+    font-weight: bold;
+    color: var(--accents);
+}
+
+.favorites-info > button{
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: var(--accents);
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    border-radius: 1rem;
+    color: var(--font-primary);
+    border: none;
+}
+
+.favorites-info > button:hover{
+    background-color: var(--primary);
+    border-radius: 1rem;
+    color: var(--secondary);
 }
 
 .sidebar{
@@ -133,27 +174,9 @@ dialog form button:hover{
 }
 
 @media only screen and (max-width: 768px){
-    .profile-container{
+    .favorites-info{
         flex-direction: column;
-    }
-
-    .profile-card{
-        width: 100%;
-        border: none;
-        border-radius: 0;
-    }
-
-    .profile-card > ul{
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-    .profile-card > ul li{
-        font-size: 1.5rem;
-    }
-
-    #profile-avatar{
-        width: 10rem;
-        height: 10rem;
+        gap: 1rem;
+        text-align: center;
     }
 }

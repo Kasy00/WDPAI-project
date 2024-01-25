@@ -1,6 +1,6 @@
 const searchRecipesBtn = document.getElementById('searchRecipesBtn');
 const cards = document.querySelector('.cards');
-const apiKey = '43a9675a98214cf99e2f931732573d7a';
+const apiKey = '42c97b6e7560428ea171c7eb780122d0';
 
 const maxIngredients = 8;
 
@@ -112,6 +112,7 @@ function searchRecipes() {
 
 function showRecipeDetails(recipeId) {
     const url = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`;
+    const addFavoriteBtn = document.getElementById('add-favorite-btn');
 
     fetch(url)
         .then(response => response.json())
@@ -124,6 +125,8 @@ function showRecipeDetails(recipeId) {
 
             const dialog = document.getElementById('recipe-dialog');
             dialog.showModal();
+
+            addFavoriteBtn.addEventListener('click', () => addToFavorites(recipeId));
 
             const closeBtn = document.querySelector('.close-btn');
             closeBtn.addEventListener('click', () =>{
@@ -163,4 +166,27 @@ window.onload = function(){
                 document.querySelector('.trending .cards').classList.add('not-found');
             }
         }) 
+}
+
+function addToFavorites(recipeId){
+    const userIdContainer = document.getElementById('userIdContainer');
+    const userId = userIdContainer.dataset.userId;
+
+    fetch('/add_favorite', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({userId, recipeId})
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success){
+            alert('Recipe added to favorites!');
+        }
+        else{
+            alert('Recipe already in favorites!');
+        }
+    })
+    .catch(error => console.error('Error:', error));
 }

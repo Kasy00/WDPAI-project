@@ -15,4 +15,6 @@ Routing::post('logout', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('addAvatar', 'FileController');
 Routing::post('calculateBMI', 'BMIController');
+Routing::post('add_favorite', 'RecipeController');
+Routing::post('get_favorites', 'RecipeController');
 Routing::run($path);

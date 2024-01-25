@@ -35,6 +35,7 @@ class SecurityController extends AppController{
         $_SESSION["name"] = $user->getName();
         $_SESSION["surname"] = $user->getSurname();
         $_SESSION["avatar"] = $user->getAvatarPath();
+        $_SESSION["id"] = $userRepository->getUserIdByEmail($user->getEmail());
 
         $bmi = $userRepository->getBMI($user->getEmail());
         $_SESSION["bmi"] = $bmi;

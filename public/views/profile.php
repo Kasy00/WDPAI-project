@@ -46,6 +46,13 @@
             </div>
         </div>
         <div class="profile-container">
+            <div class="favorites-info" style="display: none;">
+                <h1>Your favorites recipes</h1>
+                <button id="close-favorites-btn">Back</button>
+            </div>
+            <div class="favorites-container" style="display: none;">
+
+            </div>
             <div class="profile-card">
                 <button id="profile-avatar-btn">
                     <img src="<?php echo $avatar == '/public/img/profile-basic.jpg' ? $avatar : '/public/uploads/' . $avatar; ?>" alt="" id='profile-avatar'>
@@ -63,7 +70,7 @@
                 <ul>
                     <li><a href="home"><img src="/public/img/settings.svg" alt="settings">Settings</a></li>
                     <li><a id="bmiBtn"><img src="/public/img/BMI.svg" alt="BMI calculator">BMI Calculator</a></li>
-                    <li><a href="home"><img src="/public/img/favourites.svg" alt="favourites recipes">Favourites recipes</a></li>
+                    <li><a id="favoritesBtn"><img src="/public/img/favourites.svg" alt="favourites recipes">Favourites recipes</a></li>
                     <li><a href="/logout" id="logoutBtn"><img src="/public/img/logout.svg" alt="logout">Logout</a></li>
                 </ul>
             </div>
@@ -80,7 +87,29 @@
                     <button type="submit">Set avatar</button>
                 </form>
             </dialog>
+            <dialog id="recipe-dialog" class="recipe-dialog">
+                    <div class="dialog-content">
+                        <div class="dialog-header">
+                            <h3 id="recipeTitle">Recipe 1</h3>
+                        </div>
+                        <div class="dialog-body">
+                            <img id="recipeImage" src="" alt="">
+                            <div class="dialog-info">
+                                <p id="recipeInstructions">
+                                </p>
+                                <div class="dialog-details">
+                                    <p id="recipeTime"></p>
+                                    <p id="recipeServings"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dialog-footer">
+                            <button class="close-btn">Close</button>
+                        </div>
+                    </div>
+                </dialog>
         </div>
+        <div id="userIdContainer" data-user-id="<?php echo $_SESSION["id"]; ?>"></div>
     </div>
 </body>
 </html>

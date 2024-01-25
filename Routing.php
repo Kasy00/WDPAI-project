@@ -4,6 +4,7 @@ require_once 'src/controllers/DefaultController.php';
 require_once 'src/controllers/SecurityController.php';
 require_once 'src/controllers/FileController.php';
 require_once 'src/controllers/BMIController.php';
+require_once 'src/controllers/RecipeController.php';
 
 class Routing{
     public static $routes;

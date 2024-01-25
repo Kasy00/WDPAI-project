@@ -79,6 +79,9 @@
                     <div class="dialog-content">
                         <div class="dialog-header">
                             <h3 id="recipeTitle">Recipe 1</h3>
+                            <button id="add-favorite-btn">
+                                <img src="/public/img/heart.svg" alt="heart">
+                            </button>
                         </div>
                         <div class="dialog-body">
                             <img id="recipeImage" src="" alt="">
@@ -97,6 +100,7 @@
                     </div>
                 </dialog>
             </div>
+            <div id="userIdContainer" data-user-id="<?php echo $_SESSION["id"]; ?>"></div>
         </div>
     </div>
 </body>

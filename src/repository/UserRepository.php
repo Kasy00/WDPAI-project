@@ -99,4 +99,36 @@ class UserRepository extends Repository
 
         return ($result !== false) ? (float)$result['bmi'] : null;
     }
+
+    public function addFavorite($userId, $recipeId){
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM public.user_favorites WHERE user_id = :userId AND recipe_id = :recipeId
+            ');
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $stmt->bindParam(':recipeId', $recipeId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($result == false){
+            $stmt = $this->database->connect()->prepare('
+                INSERT INTO public.user_favorites (user_id, recipe_id)
+                VALUES (:userId, :recipeId)
+            ');
+            $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+            $stmt->bindParam(':recipeId', $recipeId, PDO::PARAM_INT);
+            $stmt->execute();
+        }
+    }
+
+    public function getFavorites($userId){
+        $stmt = $this->database->connect()->prepare('
+            SELECT recipe_id FROM public.user_favorites WHERE user_id = :userId
+        ');
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
+?>
