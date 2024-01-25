@@ -1,6 +1,6 @@
 const searchRecipesBtn = document.getElementById('searchRecipesBtn');
 const cards = document.querySelector('.cards');
-const apiKey = '42c97b6e7560428ea171c7eb780122d0';
+const apiKey = 'bfa43ec4eb6c4c0ead14ff8c102dfb29';
 
 const maxIngredients = 8;
 
@@ -55,7 +55,6 @@ function searchRecipes() {
         return;
     }
 
-    const apiKey = '43a9675a98214cf99e2f931732573d7a';
     const ingredientsString = ingredientsArray.join(',');
     const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&includeIngredients=${ingredientsString}&number=9`;
 

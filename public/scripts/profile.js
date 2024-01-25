@@ -6,7 +6,7 @@ const bmiForm = document.getElementById('BMI-form');
 const favoritesBtn = document.getElementById('favoritesBtn');
 const favoritesInfo = document.querySelector('.favorites-info');
 const closeFavoritesBtn = document.getElementById('close-favorites-btn');
-const apiKey = '42c97b6e7560428ea171c7eb780122d0';
+const apiKey = 'bfa43ec4eb6c4c0ead14ff8c102dfb29';
 
 bmiBtn.addEventListener('click', () =>{
     bmiDialog.showModal();
